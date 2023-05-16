@@ -1,0 +1,541 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+:root {
+    --light-bg-color: #f7f7f7;
+    --light-text-color: #070707;
+    --light-container-color: #dbdbdb;
+    --dark-bg-color: #272727;
+    --dark-text-color: #f7f7f7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    /* background: var(--light-bg-color);
+    color: var(--light-text-color); */
+    background: var(--dark-bg-color);
+    color: var(--dark-text-color);
+}
+
+.dark-mode {
+    /* background: var(--dark-bg-color);
+    color: var(--dark-text-color); */
+}
+
+.hide {
+    display: none;
+}
+
+
+
+section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 80px 0 0 0;
+}
+
+p {
+    letter-spacing: 0.3px;
+    font-size: 18px;
+}
+
+ol {
+    counter-reset: item;
+    list-style: none;
+}
+
+li:before {
+    content: counter(item) ". ";
+    counter-increment: item;
+    font-weight: bold;
+}
+
+
+/* Style the scrollbar */
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: orangered;
+    border-radius: 10px;
+
+}
+
+.hove:hover {
+    color: crimson;
+    background: none;
+    border-radius: px;
+    transform: scale(1.1);
+    background: #ccc;
+    border-radius: 10px;
+    transform: 1.1;
+}
+
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ccc;
+}
+
+/* ============= navabar ===============  */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+
+}
+
+#mode-toggle {
+    cursor: pointer;
+}
+
+.fa-moon,
+.fa-sun {
+    font-size: 22px;
+}
+
+#search-box {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    outline: none;
+    width: 30%;
+    transition: all 1s ease;
+}
+
+#search-box:focus {
+    width: 60%;
+}
+
+#search-btn {
+    height: 25px;
+    font-size: 12px;
+    width: 30%;
+    transition: all 0.4s ease-in-out;
+    border-radius: 0;
+}
+
+#search-btn:hover {
+    border-radius: 20px;
+}
+
+
+.highlight {
+    background-color: yellow;
+}
+
+.title-and-headlines-section,
+.vows-cards-container,
+.info-section,
+.example-section,
+.message-section,
+.source-section {
+    width: 85%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .title-and-headlines-section,
+    .vows-cards-container,
+    .info-section,
+    .example-section,
+    .message-section,
+    .source-section {
+        width: 100%;
+        margin: 8px;
+        padding: 20px 12px;
+    }
+
+    section {
+        margin: 50px 0 0 0;
+    }
+}
+
+/* ===================================== hero section ================================= */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 30vh;
+    background-image: url('https://images.unsplash.com/photo-1640762173501-b3bf25be849c?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=4800');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 -200px;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: -65px;
+    left: 120px;
+    height: 130px;
+    width: 130px;
+    background-image: url('https://effectivebuddhism.com/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F98d5be50-88db-49cd-ab03-0b842c7c8b79%2FScreen_Shot_2022-08-03_at_1.14.52_AM.png?table=block&id=4e30a92e-8268-41ec-a182-882670e34612&spaceId=f78663f8-78b0-4675-9f1f-807e68f53ff1&width=250&userId=&cache=v2');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+
+        height: 40vh;
+        background-position: center;
+    }
+
+    .hero::after {
+        bottom: -50px;
+        left: 30px;
+        height: 120px;
+        width: 120px;
+
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .hero {
+        width: 100%;
+        height: 50vh;
+        background-position: center;
+    }
+
+    .hero::after {
+        bottom: -30px;
+        left: 30px;
+        height: 110px;
+        width: 110px;
+
+    }
+}
+
+/* ================ title-and-headlines-section ================ */
+
+
+
+.title-and-headlines-section h1 {
+    font-size: 40px;
+    letter-spacing: 0.8px;
+    font-weight: 800;
+
+}
+
+.title-and-headlines-subsection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background: var(--light-container-color);
+    margin: 20px 0;
+    padding: 40px;
+    border-radius: 30px;
+}
+
+.left-up-polygon {
+    clip-path: polygon(0% 0%, 100% 15%, 100% 85%, 0% 100%);
+    border-left: 10px solid #101010;
+
+}
+
+.right-up-polygon {
+    clip-path: polygon(0% 15%, 100% 0%, 100% 100%, 0% 85%);
+    border-right: 10px solid #101010;
+
+}
+
+.title-and-headlines-subsection div {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    color: orangered;
+    font-size: 28px;
+}
+
+.title-and-headlines-subsection p {
+    font-size: 18px;
+    color: #000;
+}
+
+@media screen and (max-width: 768px) {
+
+
+    .title-and-headlines-section h1 {
+        font-size: 30px;
+    }
+
+    .title-and-headlines-subsection {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .left-up-polygon,
+    .right-up-polygon {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+    .title-and-headlines-subsection:nth-child(2) {
+        flex-direction: column-reverse;
+
+    }
+}
+
+
+/* =============================== vows cards ===============================  */
+
+
+
+.vows-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.vows-card div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    padding: 20px;
+
+}
+
+.vows-card div p {
+    font-size: 18px;
+    padding: 10px;
+}
+
+.vows-card div hr {
+    width: 100%;
+    border-bottom: 2px solid rgb(192, 189, 189);
+}
+
+
+.vows-card div ol li {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+@media screen and (max-width: 768px) {
+
+
+    .vows-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .vows-card:nth-child(2) {
+        flex-direction: column-reverse;
+    }
+
+    .vows-card div {
+
+        margin: 20px 0;
+        padding: 5px;
+
+    }
+
+}
+
+/* ===================  info section  // example ================================================= */
+
+.info-paragraph {
+    margin: 20px 0;
+
+}
+
+.example-paragraph {
+    margin: 10px 0;
+}
+
+.example-paragraph:nth-child(1) {
+    text-decoration: underline;
+}
+
+.toggle-example {
+    display: flex;
+    align-items: center;
+}
+
+.toggleButton {
+    width: 15px;
+    height: 10px;
+    background: #000;
+    position: relative;
+    display: inline-block;
+    clip-path: polygon(0% 0%, 100% 50%, 100% 50%, 0% 100%);
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.active {
+    transform: rotate(90deg);
+
+}
+
+#list-container-example {
+    margin: 20px 0;
+}
+
+.list-item,
+.message-list-item {
+    font-size: 18px;
+    letter-spacing: 0.3px;
+    margin: 15px 0;
+}
+
+
+.list-container.example-animate {
+    transform: scaleX(0);
+    animation: example-show 1s ease-in-out forwards;
+}
+
+@keyframes example-show {
+    0% {
+        transform: scaleX(0.1);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+
+
+
+/* ===================== message section =======================  */
+.message-container div {
+    display: grid;
+    gap: 5px;
+    margin: 20px 0;
+    padding: 10px 0;
+}
+
+.message-container div:nth-child(1) {
+    grid-template-columns: 5fr 2fr;
+
+}
+
+.message-container div:nth-child(2) {
+    grid-template-columns: 2fr 5fr;
+}
+
+.message-link {
+    color: #606060;
+}
+
+.message-list-section {
+    margin: 50px 0;
+}
+
+.message-list-item {
+    width: 70%;
+    margin: 50px 0;
+}
+
+.message-list-item:nth-child(even) {
+    margin-left: 30%;
+}
+
+@media screen and (max-width: 768px) {
+    .message-list-item {
+        width: 100%;
+        margin: 20px 0;
+        padding: 5px;
+    }
+
+    .message-list-item:nth-child(even) {
+        margin-left: 0;
+    }
+
+
+    .message-container div:nth-child(1),
+    .message-container div:nth-child(2) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* ============== source section ===============  */
+.source-card {
+    text-decoration: none;
+    color: var(--light-text-color);
+}
+
+.source-card-box {
+    border: 1px solid #444;
+    padding: 10px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.5s ease-in-out;
+    background: var(--light-container-color);
+}
+
+.source-card-box:hover {
+    border-radius: 30px;
+    background: #aaa;
+    transform: scale(0.9);
+}
+
+.source-card-box img {
+    width: 400px;
+    height: 150px;
+}
+
+.source-links {
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.source-links a {
+    text-decoration: underline;
+    color: var(--light-text-color);
+    transition: all 2s ease-in-out;
+}
+
+.source-links:hover {
+    background: #ccc;
+    /* transform: scale(0.9); */
+}
+
+.source-img {
+    filter: brightness(70%);
+    border-radius: 20px;
+    margin: 50px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .source-card-box {
+
+        padding: 5px;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .source-card-box div small {
+        display: none;
+    }
+
+    .source-card-box img {
+        width: 100%;
+        height: 150px;
+
+    }
+}
